@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "cassandra_check": {
+      "command": "/etc/sensu/plugins/check-cassandra.rb -i heap_memory -s heap_used -w 200 -c 500 -t ReadStage -W 4 -C 5 -k system_schema -m read_count -T events -M sstable_count -a 20 -b 30",
+      "interval": 60,
+      "handler": "default",
+      "subscribers": [ 
+        "dev",
+        "ubuntu-hosts"
+          ]
+    }
+  }
+}
+
+
